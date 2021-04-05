@@ -70,4 +70,12 @@ MVI.prototype.findModeNumberWithJS = function (arr) {
     window.console.log(groupArr.shift());
 }
 
+MVI.prototype.baseFunctionWithES6 = function (n) {
+    f = n => n <= 2 ? 1 : f(--n) + f(--n);
+}
+
+MVI.prototype.baseFunctionWithES3 = function (n) {
+    return n <= 2 ? 1 : arguments.callee(--arguments[0]) + arguments.callee(--arguments[0]);
+}
+
 var mvi = window.mvi ? window.mvi : new MVI();

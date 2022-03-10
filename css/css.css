@@ -5,3 +5,39 @@
 title {
     display: none;
 }
+
+/* CSS Variable */
+.basic-container {
+    --dark-foreground-color: #aaaaaa;
+    --dark-background-color: #006580;
+}
+
+.basic {
+    color: var(--dark-foreground-color);
+    background-color: var(--dark-background-color);
+}
+
+.defined-variable {
+    color: var(--dark-background-color);
+}
+
+.undefined-variable-first {
+    color: var(--undefined-variable);
+}
+
+.undefined-variable-second {
+    color: var(--undefined-variable, red);
+}
+
+.undefined-variable-third {
+    color: var(--undefined-variable, re, bl, yellow);
+}
+
+.undefined-variable-four {
+    color: var(--Dark-background-color);
+}
+
+/* CSS Env */
+.env-container .env-basic{
+    padding: env(viewport-segment-width, 1, 1);
+}

@@ -16,6 +16,20 @@
         <input type="button" value="sayName" onclick="mvi.sayName()">
     </div>
 
+    <div class="prevent-closing-browser">
+        <div>
+            <!-- DO NOT popup dialog -->
+            <a href="http://cn.bing.com" target="_blank">Bing New Tab</a>
+            <!-- popup dialog -->
+            <a href="http://cn.bing.com" target="_self">Bing Current Tab</a>
+            <!-- DO NOT popup dialog -->
+            <a href="#conent">Content</a>
+        </div>
+        <div id="content">
+            <p>Test Content</p>
+        </div>
+    </div>
+
     <div class="variable">
         <div class="basic-container">
             <label class="basic">CSS Variable</label>

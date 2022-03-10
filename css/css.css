@@ -1,3 +1,10 @@
+* {
+    display: block;
+}
+
+title {
+    display: none;
+}
 
 /* CSS Variable */
 .basic-container {

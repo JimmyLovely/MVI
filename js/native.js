@@ -78,4 +78,18 @@ MVI.prototype.baseFunctionWithES3 = function (n) {
     return n <= 2 ? 1 : arguments.callee(--arguments[0]) + arguments.callee(--arguments[0]);
 }
 
+MVI.prototype.preventClosingBrowser = function () {
+    // 1. The dialog popups only if the page is changed
+    // 2. The returnValue is not applied to the dialog string
+    // 3. Can not popoup custom dialog
+    // 4. It's better to save data to local/remote before unload
+    window.addEventListener('beforeunload', function (e) {
+        window.localStorage.setItem('beforeunload', 'stored data');
+
+        e.preventDefault(); // Standard
+        e.returnValue = 'Custom Value'; // Chrome 30+
+        return 'Custom Value';          // Chrome 1+
+    });
+}
+
 var mvi = window.mvi ? window.mvi : new MVI();
